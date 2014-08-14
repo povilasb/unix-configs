@@ -1,0 +1,71 @@
+set nocompatible
+
+filetype off
+filetype plugin on
+filetype indent on
+filetype plugin indent off
+
+syntax enable
+
+
+" Init vim plugin bundler.
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+
+call vundle#end()
+
+
+" shows line numbers
+set number
+
+set mouse=a
+
+" tab size
+set tabstop=8
+
+" do not backup files
+set noswapfile
+
+set t_Co=256
+colorscheme desert_povilas
+
+" vertical line
+set colorcolumn=79
+" set .java specific commands
+autocmd Filetype java setlocal colorcolumn=101
+
+" do not fill tab with spaces
+set noexpandtab
+
+" highlight search results
+set hls
+
+
+" copy current working directory to primary selection
+command Cwd :!pwd | tr -d '\n' | xsel
+
+
+" show special symbols: tabs, EOL, trailing whitespaces
+set list listchars=tab:>-,eol:$,trail:.
+
+
+" creates colorscheme and ensures that it is not overwritten by future color
+" schemes
+highlight ExtraWhitespace ctermbg=red guibg=red
+
+" tab and eof symbols color scheme:grey
+highlight NonText ctermfg=DarkGray guifg=grey
+highlight SpecialKey ctermfg=DarkGray guifg=grey
+
+
+" match and highlight trailing white spaces
+match ExtraWhitespace /\s\+$/
+
+" remove trailing spaces before file save
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Disable YouCompleteMe extra file confirmation prompt.
+let g:ycm_confirm_extra_conf = 0
