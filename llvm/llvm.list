@@ -1,0 +1,2 @@
+deb http://llvm.org/apt/wheezy/ llvm-toolchain-wheezy main
+deb-src http://llvm.org/apt/wheezy/ llvm-toolchain-wheezy main
