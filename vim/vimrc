@@ -69,3 +69,5 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Disable YouCompleteMe extra file confirmation prompt.
 let g:ycm_confirm_extra_conf = 0
+
+set backspace=indent,eol,start
