@@ -74,3 +74,7 @@ set backspace=indent,eol,start
 
 " Display current line and column numbers.
 set ruler
+
+" Automatically indent when entering new block.
+set autoindent
+set cindent
