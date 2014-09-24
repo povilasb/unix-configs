@@ -71,3 +71,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 let g:ycm_confirm_extra_conf = 0
 
 set backspace=indent,eol,start
+
+" Display current line and column numbers.
+set ruler
