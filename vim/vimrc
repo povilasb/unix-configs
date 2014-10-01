@@ -30,7 +30,7 @@ set tabstop=8
 set noswapfile
 
 set t_Co=256
-colorscheme desert_povilas
+colorscheme povilasb_colors
 
 " vertical line
 set colorcolumn=79
