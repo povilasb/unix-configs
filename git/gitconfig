@@ -1,0 +1,12 @@
+[pull]
+	rebase = true
+[user]
+	name = Povilas Balciunas
+	email = balciunas90@gmail.com
+[color]
+	ui = true
+[color "status"]
+	changed = yellow bold
+	added = green bold
+	untracked = cyan bold
+
