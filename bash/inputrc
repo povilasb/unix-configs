@@ -1,0 +1,3 @@
+# Sets bash editing mode to VI.
+set editing-mode vi
+set keymap vi-command
