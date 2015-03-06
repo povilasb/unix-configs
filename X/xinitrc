@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# User's .xinitrc file
+
+# Merge custom X resources
+xrdb -merge "${HOME}/.Xresources"
+
+/usr/bin/pulseaudio &
+
+# disable beep
+xset b off
+
+# Start the window manager
+exec awesome --config ~/.config/awesome/rc.lua
