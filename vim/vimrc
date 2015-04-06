@@ -78,3 +78,9 @@ set ruler
 " Automatically indent when entering new block.
 set autoindent
 set cindent
+
+" Display matching bracket.
+set showmatch
+
+" While typing search pattern display matches.
+set incsearch
