@@ -14,6 +14,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'joonty/vim-phpqa.git'
 
 call vundle#end()
 
@@ -103,3 +104,13 @@ augroup Whitespace
 	autocmd!
 	autocmd BufEnter,WinEnter * call Whitespace()
 augroup END
+
+
+" PHP QA
+let g:phpqa_messdetector_autorun = 0
+
+" Don't run codesniffer on save (default = 1)
+let g:phpqa_codesniffer_autorun = 0
+
+" Show code coverage on load (default = 0)
+let g:phpqa_codecoverage_autorun = 0
