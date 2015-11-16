@@ -7,3 +7,4 @@ cp povilasb_colors.vim ${VIM_COLORS_DIR}
 mkdir -p ~/.vim
 cp -r ./configs ~/.vim/configs
 cp -rf ./syntax ~/.vim/
+cp -rf ./ftplugin ~/.vim/
