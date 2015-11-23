@@ -15,6 +15,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'joonty/vim-phpqa.git'
+Plugin 'FooSoft/vim-argwrap'
 
 call vundle#end()
 
