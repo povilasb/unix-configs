@@ -7,4 +7,4 @@ setlocal foldmethod=indent
 " pr<Space> is replaced with "print('')"
 " and cursor is placed between the brackets.
 iab pr print('')<Left><Left>
-imap <Space> <C-]>
+imap <F2> <C-]>
