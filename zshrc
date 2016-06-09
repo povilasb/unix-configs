@@ -12,6 +12,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 bindkey -v
+bindkey "^R" history-incremental-search-backward
 setopt no_share_history
 
 alias grc='cd /home/povilas/studies/recurse-center'
