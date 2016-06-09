@@ -17,3 +17,6 @@ setopt no_share_history
 
 alias grc='cd /home/povilas/studies/recurse-center'
 alias br='xrandr --output LVDS1 --brightness'
+
+# Copy working directory
+alias cwd='echo -n `pwd` | xsel'
