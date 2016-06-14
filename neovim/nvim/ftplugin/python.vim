@@ -6,5 +6,7 @@ setlocal foldmethod=indent
 
 " pr<Space> is replaced with "print('')"
 " and cursor is placed between the brackets.
-iab pr print('')<Left><Left>
-imap <F2> <C-]>
+iab pr print()<Left>
+iab ass assert_that()<Left>
+iab desc def describe_():<Left><Left><Left>
+iab it def it_():<Left><Left><Left>
