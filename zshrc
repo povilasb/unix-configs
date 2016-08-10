@@ -21,3 +21,4 @@ alias br='xrandr --output LVDS1 --brightness'
 # Copy working directory
 alias cwd='echo -n `pwd` | xsel'
 alias xs='xonsh'
+alias p3='python3'
