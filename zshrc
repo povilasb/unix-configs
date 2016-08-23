@@ -15,7 +15,6 @@ bindkey -v
 bindkey "^R" history-incremental-search-backward
 setopt no_share_history
 
-alias grc='cd /home/povilas/studies/recurse-center'
 alias br='xrandr --output LVDS1 --brightness'
 
 # Copy working directory
