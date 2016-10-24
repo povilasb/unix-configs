@@ -11,4 +11,4 @@ xrdb -merge "${HOME}/.Xresources"
 xset b off
 
 # Start the window manager
-exec awesome --config ~/.config/awesome/rc.lua
+exec ~/bin/qtile/bin/qtile
