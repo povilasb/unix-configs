@@ -11,6 +11,7 @@ set number
 set tabstop=8
 
 set noswapfile
+" Use y+ to copy to system clipboard
 set clipboard+=unnamedplus
 
 " Show command effects incrementally.
