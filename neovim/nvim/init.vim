@@ -13,6 +13,9 @@ set tabstop=8
 set noswapfile
 set clipboard+=unnamedplus
 
+" Show command effects incrementally.
+set inccommand=nosplit
+
 " Load other vim configs.
 for file in split(glob('~/.config/nvim/conf.d/*.vim'), '\n')
 	exe 'source' file
