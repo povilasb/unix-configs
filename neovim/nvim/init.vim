@@ -18,6 +18,7 @@ set clipboard+=unnamedplus
 set inccommand=nosplit
 
 " Load other vim configs.
+" NOTE: ~/.config/nvim/autoload could be used instead
 for file in split(glob('~/.config/nvim/conf.d/*.vim'), '\n')
 	exe 'source' file
 endfor
