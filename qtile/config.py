@@ -60,8 +60,7 @@ keys = [
     Key([mod], "r", lazy.spawncmd()),
 ]
 
-groups = [Group('1', spawn='google-chrome')] + [Group(i) for i in "2345678"] \
-    + [Group('9', spawn='skype')]
+groups = [Group('1', spawn='google-chrome')] + [Group(i) for i in "23456789"]
 
 for i in groups:
     # mod1 + letter of group = switch to group
