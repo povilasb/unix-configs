@@ -1,0 +1,8 @@
+[pc]
+192.168.1.234
+
+[all:vars]
+ansible_connection=ssh
+ansible_ssh_user=povilas
+ansible_ssh_port=22
+ansible_become_pass=************

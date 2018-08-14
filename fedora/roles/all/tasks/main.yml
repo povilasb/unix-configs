@@ -1,0 +1,35 @@
+---
+
+- name: Packets | development
+  dnf:
+    name: git,gcc,neovim,openssl-devel,clang-libs,clang-devel
+    state: latest
+
+- name: Packets | virtualization
+  dnf:
+    name: qemu,qemu-kvm,virt-manager,libvirt-daemon-qemu,polkit,lxpolkit
+    state: latest
+
+- name: Packets | tools
+  dnf:
+    name: tmux
+    state: latest
+
+- name: Docker | Setup repo
+  shell: dnf config-manager \
+    --add-repo \
+    https://download.docker.com/linux/fedora/docker-ce.repo
+  args:
+    warn: false
+
+- name: Docker | Install
+  dnf:
+    name: docker-ce
+    state: latest
+
+- name: User
+  user:
+    name: povilas
+    group: povilas
+    groups: wheel,libvirt,docker
+    append: yes
