@@ -14,5 +14,5 @@ iab ass assert_that!();<Left><Left>
 " see: http://vim.wikia.com/wiki/Syntax_folding_of_Vim_scripts
 syn region commentCopyright
     \ start="// Copyright.*"
-    \ end="// relating.*"
+    \ end="// Software.*"
     \ transparent fold keepend
