@@ -5,8 +5,29 @@ from libqtile.config import Key, Screen, Group, Drag, Click
 from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook
 
-
 mod = "mod4"
+shift = 'shift'
+
+
+def switch_language():
+    """Detects current language and switches to next one available."""
+    kb_layout_regex = re.compile('layout:\s+(?P<layout>\w+)')
+    layouts = ['us', 'lt']
+
+    @lazy.function
+    def __inner(qtile):
+        command = 'setxkbmap -verbose 10'
+        output = subprocess.check_output(command.split(' ')).decode()
+
+        match_layout = kb_layout_regex.search(output)
+        kb = match_layout.group('layout')
+
+        next_keyboard = layouts[(layouts.index(kb) + 1) % len(layouts)]
+
+        subprocess.check_output(['setxkbmap', next_keyboard])
+
+    return __inner
+
 
 keys = [
     # Switch between windows in current stack pane
@@ -58,6 +79,8 @@ keys = [
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
     Key([mod], "r", lazy.spawncmd()),
+
+    Key([mod, shift], 'l', switch_language()),
 ]
 
 groups = [Group('1', spawn='google-chrome')] + [Group(i) for i in "23456789"]
