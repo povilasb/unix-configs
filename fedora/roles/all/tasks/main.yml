@@ -2,7 +2,7 @@
 
 - name: Packets | development
   dnf:
-    name: git,gcc,neovim,openssl-devel,clang-libs,clang-devel
+    name: git,gcc,neovim,openssl-devel,clang-libs,clang-devel,perf
     state: latest
 
 - name: Packets | virtualization
@@ -12,7 +12,7 @@
 
 - name: Packets | tools
   dnf:
-    name: tmux
+    name: tmux,iotop,ltrace,strace
     state: latest
 
 - name: Docker | Setup repo
