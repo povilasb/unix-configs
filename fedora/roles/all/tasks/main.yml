@@ -2,7 +2,9 @@
 
 - name: Packets | development
   dnf:
-    name: git,gcc,neovim,openssl-devel,clang-libs,clang-devel,perf
+    name: >
+      git,gcc,neovim,openssl-devel,clang-libs,clang-devel,perf,tig,
+      redhat-rpm-config,python3-devel,libxml2-devel
     state: latest
 
 - name: Packets | virtualization
@@ -12,7 +14,22 @@
 
 - name: Packets | tools
   dnf:
-    name: tmux,iotop,ltrace,strace
+    name: tmux,iotop,ltrace,strace,pciutils,zsh,entr,rsync,pass,detox,snap
+    state: latest
+
+- name: Packets | Networking
+  dnf:
+    name: >
+      wicd,wicd-curses,iwl1000-firmware,network-manager-applet,NetworkManager,
+      NetworkManager-wifi,ftp
+    state: latest
+
+- name: Packets | GUI
+  dnf:
+    name: >
+      xorg-x11-drv-intel,mesa-libGL.i686,mesa-dri-drivers.i686,
+      dejavu-sans-mono-fonts,pavucontrol,pulseaudio,pulseaudio-module-x11,
+      firefox,rxvt-unicode-256color,tigervnc
     state: latest
 
 - name: Docker | Setup repo
@@ -33,3 +50,7 @@
     group: povilas
     groups: wheel,libvirt,docker
     append: yes
+
+- name: System | Timezone
+  timezone:
+    name: Europe/Vilnius
