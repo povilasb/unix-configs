@@ -8,7 +8,6 @@ filetype plugin indent on
 
 set colorcolumn=79
 set number
-set tabstop=8
 
 set noswapfile
 " Use y+ to copy to system clipboard
