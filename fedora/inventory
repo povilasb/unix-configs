@@ -1,8 +1,17 @@
 [pc]
 192.168.1.234
 
-[all:vars]
+[pc:vars]
 ansible_connection=ssh
 ansible_ssh_user=povilas
 ansible_ssh_port=22
-ansible_become_pass=************
+ansible_become_pass=******
+
+[local]
+localhost
+
+[local:vars]
+ansible_connection=local
+ansible_python_interpreter=python3
+ansible_become_pass=asmx8612
+

@@ -21,7 +21,7 @@
   dnf:
     name: >
       wicd,wicd-curses,iwl1000-firmware,network-manager-applet,NetworkManager,
-      NetworkManager-wifi,ftp
+      NetworkManager-wifi,ftp,bind-utils
     state: latest
 
 - name: Packets | GUI

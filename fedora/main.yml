@@ -1,6 +1,6 @@
 ---
 
-- hosts: pc
+- hosts: local
   become: yes
   become_user: root
   become_method: su

@@ -1,4 +1,16 @@
-xterm*faceSize: 11
-xterm*faceName: DejaVu Sans Mono
-xterm*background: black
-xterm*foreground: white
+URxvt.font: xft:monospace:size=9
+URxvt.iso14755: true
+URxvt.iso14755_52: false
+URxvt.background: rgb:0/0/0
+URxvt.foreground: white
+
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+URxvt.secondaryWheel: 1
+
+URxvt.perl-ext-common: default,matcher,resize-font,clipboard
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg5
+URxvt.keysym.C-equal: resize-font:bigger
+URxvt.scrollBar: false
