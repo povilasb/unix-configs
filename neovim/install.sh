@@ -1,2 +1,2 @@
-rm ~/.config/nvim -rf
+rm -rf ~/.config/nvim
 cp -r nvim ~/.config/
