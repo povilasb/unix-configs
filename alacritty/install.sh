@@ -6,4 +6,4 @@ else
     src=alacritty.$@.yml
 fi
 
-install --mode=644 $src ~/.config/alacritty/alacritty.yml
+install -m 644 $src ~/.config/alacritty/alacritty.yml
