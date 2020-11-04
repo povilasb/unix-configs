@@ -10,7 +10,12 @@ Plug 'honza/vim-snippets'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 
-" Async linting and LSP integration
-Plug 'w0rp/ale'
+" LSP integration
+" NOTE: next neovim release SHOULD have LSP client built-in, hence remove this
+" plugin.
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 call plug#end()
