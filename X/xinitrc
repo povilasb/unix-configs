@@ -5,10 +5,10 @@
 # Merge custom X resources
 xrdb -merge "${HOME}/.Xresources"
 
-/usr/bin/pulseaudio &
+# /usr/bin/pulseaudio &
 
 # disable beep
 xset b off
 
 # Start the window manager
-exec ~/bin/qtile/bin/qtile
+exec qtile
