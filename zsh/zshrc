@@ -24,3 +24,5 @@ alias pa='source pyenv/bin/activate'
 
 alias clippy='cargo clippy --profile=test'
 alias book='cd /home/povilas/projects/thebook'
+
+export BAT_THEME=OneHalfLight
