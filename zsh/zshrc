@@ -6,9 +6,11 @@ source $ZSH/oh-my-zsh.sh
 
 # vim key bindings
 bindkey -v
+bindkey '^R' history-incremental-search-backward
 
 . "$HOME/.cargo/env"
 export BAT_THEME=OneHalfLight
+export EDITOR=vim
 
 # "Zettelkasten new"
 function zkn() {
@@ -20,10 +22,10 @@ function zkn() {
 
     timestamp=`date +%s`
     if [ -z "$2" ] ; then
-      timestamp=`date +%s`
+      timestamp=`coreutils date +%s`
     else
       given_date="$2"
-      timestamp=`date -d${given_date} +%s`
+      timestamp=`coreutils date -d${given_date} +%s`
     fi
 
     $EDITOR ~/projects/zettels/${timestamp}_${topic}.md
