@@ -13,5 +13,5 @@ localhost
 [local:vars]
 ansible_connection=local
 ansible_python_interpreter=python3
-ansible_become_pass=asmx8612
+ansible_become_pass=*****
 
