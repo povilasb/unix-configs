@@ -41,6 +41,23 @@ the point.
   small change into an unreviewable diff. If a file is badly ordered and worth
   fixing, say so and let the user decide, ideally as its own commit.
 
+## Module declaration
+
+Start a source module with a short documentation comment that declares its
+semantic responsibility. State what belongs in the module, not implementation
+details already apparent from the code. Include an important invariant when one
+defines the module's meaning.
+
+```ts
+/**
+ * Conditions describe body concerns over time and their affected muscle states.
+ */
+```
+
+Use the language's conventional module-comment syntax. Omit it only for
+trivial entry points, generated files, or files whose purpose is unambiguous
+from a small declarative configuration.
+
 ## Language constraints
 
 The rule survives in most languages, but check before assuming:

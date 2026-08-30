@@ -31,7 +31,9 @@ an established alternative:
 
 ## Default frontend stack
 
-* Use svelte and shadcn-svelte. 
+* Use Svelte and shadcn-svelte.
+* Use `lucide-svelte` for interface icons. Icon-only controls must have an
+  accessible `aria-label`.
 
 ## New projects
 
