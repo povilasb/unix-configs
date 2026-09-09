@@ -8,6 +8,10 @@ description: Python conventions for this user — underscore-prefix everything t
 ## General
 
 * Always use explicit typing. Use `import typing as t` for succinct code.
+* For new projects and standalone scripts, use the latest stable Python release
+  (currently 3.14). Set `requires-python = ">=3.14"` in project or inline script
+  metadata. Do not default to older versions for speculative compatibility;
+  respect existing projects' supported versions unless asked to upgrade them.
 
 ## Private names take a leading underscore
 
@@ -56,7 +60,7 @@ Standalone scripts declare their dependencies inline (PEP 723) and run under
 ```python
 #!/usr/bin/env -S uv run --script
 # /// script
-# requires-python = ">=3.12"
+# requires-python = ">=3.14"
 # dependencies = ["typer", "pymysql>=1.1"]
 # ///
 ```
