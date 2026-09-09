@@ -1,7 +1,55 @@
 ---
 name: programming
-description: Cross-language code layout for this user — order function definitions top-down, following the call graph, so a file reads from high-level intent down to detail. Load before writing or restructuring a source file in any language.
+description: Cross-language programming conventions — domain-revealing names and top-down, call-graph code layout. Load before writing or restructuring source files in any language, and when naming CLI commands, lifecycle states, workflows, modules, or application directories.
 ---
+
+# Name things by domain purpose and scope
+
+Names are part of the user interface, including file paths and CI workflow
+names. A reader should understand what something is responsible for, or what
+an operation acts on, without opening its implementation. Use the vocabulary
+of the business or operational domain, not incidental history or an
+implementation detail that leaves the actual subject unnamed.
+
+- **Name the subject, not just the mechanism.** A hosting provider does not
+  identify the application being deployed. Prefer `deploy-web` over
+  `cloudflare-deploy`; add the provider as a qualifier when it distinguishes
+  multiple deployment targets.
+- **Use action + object for operations.** Bare verbs such as `bootstrap`,
+  `configure`, or `process` hide their scope. Prefer `setup-docker`,
+  `setup-deployment-config`, or another name that says what changes. Component
+  and directory names should identify their responsibility, such as `web`
+  for the frontend web app, rather than an ambiguous label such as `live`.
+- **Match the actual effects.** Generating deployment configuration is not
+  deploying an application. A step that opens, checks, and merges a PR does
+  more than push a branch. Keep names accurate as behavior evolves, especially
+  for resumable lifecycle states where an operator chooses what to run next.
+- **Use enough context, not maximum length.** Judge the name where it is
+  consumed: a directory tree, CLI help, workflow list, log, or call site.
+  Qualify it when several subjects could fit; omit context already made clear
+  by the enclosing scope. Technical names are appropriate when the technology
+  really is the subject, as in installing Docker.
+
+Examples of clearer names when they describe the actual responsibility:
+
+| Ambiguous | Clearer | What the name communicates |
+| --- | --- | --- |
+| `bootstrap` | `setup-docker` | Install/configure Docker on the target servers |
+| `configure` | `setup-deployment-config` | Generate deployment configuration, not deploy it |
+| `cloudflare-deploy.yml` | `deploy-web.yaml` with display name `Deploy Web App to Cloudflare` | Which application is deployed, then where |
+| `apps/live` | `apps/web` | The frontend web application |
+
+**Review test:** could this name equally describe another application or
+operation in this repository? If so, add the missing subject or scope. Having
+to inspect source just to identify the subject is a naming/UX problem, not
+something to solve only with a comment.
+
+For an agreed rename, update identifiers, CLI help and validation, logs,
+workflow display names and references, documentation, and tests together as
+applicable. Public flags, state names, and paths may be compatibility
+contracts: flag affected callers and agree on aliases or migration when
+needed. Propose broader repository renames separately rather than doing them
+as incidental cleanup.
 
 # Order definitions by the call graph
 
