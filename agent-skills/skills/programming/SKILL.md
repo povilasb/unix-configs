@@ -40,6 +40,11 @@ the point.
   same spirit. Don't reorder the rest of the file as a drive-by — that turns a
   small change into an unreviewable diff. If a file is badly ordered and worth
   fixing, say so and let the user decide, ideally as its own commit.
+- **Visually group function bodies.** Separate distinct phases such as argument
+  parsing, validation, setup, main work, and reporting with blank lines. Keep
+  tightly related statements together; do not add blank lines after every
+  statement. Avoid dense one-line functions and expressions when expanding them
+  makes the control flow easier to scan.
 
 ## Module declaration
 
