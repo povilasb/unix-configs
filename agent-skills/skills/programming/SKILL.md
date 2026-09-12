@@ -1,7 +1,17 @@
 ---
 name: programming
-description: Cross-language programming conventions — domain-revealing names and top-down, call-graph code layout. Load before writing or restructuring source files in any language, and when naming CLI commands, lifecycle states, workflows, modules, or application directories.
+description: Cross-language programming conventions — simplicity first, domain-revealing names, and top-down call-graph code layout. Load before writing or restructuring source files in any language, and when naming CLI commands, lifecycle states, workflows, modules, or application directories.
 ---
+
+# Prefer the simplest complete solution
+
+Value simplicity. Bias toward fewer concepts, layers, fields, and
+stateful components. Implement the current requirement completely; do not expand
+it into a platform for possible future requirements.
+
+- **Simplicity is not skipping correctness.** Keep necessary validation,
+  authorization, bounded external calls, and honest error handling. Optimize for
+  fewer concepts to understand and maintain, not merely fewer lines of code.
 
 # Name things by domain purpose and scope
 
