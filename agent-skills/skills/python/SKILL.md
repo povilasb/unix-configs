@@ -12,6 +12,7 @@ description: Python conventions for this user — underscore-prefix everything t
   (currently 3.14). Set `requires-python = ">=3.14"` in project or inline script
   metadata. Do not default to older versions for speculative compatibility;
   respect existing projects' supported versions unless asked to upgrade them.
+* Prefer async for concurrency were possible.
 
 ## Private names take a leading underscore
 
