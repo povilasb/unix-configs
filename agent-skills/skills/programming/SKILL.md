@@ -3,6 +3,8 @@ name: programming
 description: Cross-language programming conventions — simplicity first, domain-revealing names, and top-down call-graph code layout. Load before writing or restructuring source files in any language, and when naming CLI commands, lifecycle states, workflows, modules, or application directories.
 ---
 
+* Use visual spacing to group related statements and optimize for code readability.
+
 # Prefer the simplest complete solution
 
 Value simplicity. Bias toward fewer concepts, layers, fields, and
