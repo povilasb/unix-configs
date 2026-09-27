@@ -4,6 +4,7 @@ description: Cross-language programming conventions — simplicity first, domain
 ---
 
 * Use visual spacing to group related statements and optimize for code readability.
+* Separate domain logic from representation.
 
 # Prefer the simplest complete solution
 
