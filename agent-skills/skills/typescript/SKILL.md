@@ -5,6 +5,7 @@ description: TypeScript backend conventions for this user: Bun, Fastify, Zod, Po
 
 # TypeScript conventions
 
+* Always add `tsconfig.json` - makes other tools behave better.
 * Use `bun` for dependencies, scripts,
   tests, and execution; do not add npm, pnpm, or a second lockfile.
 * Use `prettier` for auto-formatting.

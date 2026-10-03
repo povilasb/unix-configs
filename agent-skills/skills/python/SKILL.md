@@ -14,7 +14,12 @@ description: Python conventions for this user — underscore-prefix everything t
   respect existing projects' supported versions unless asked to upgrade them.
 * Prefer async for concurrency were possible.
 * Use `pytest` for testing.
-* Use `logging` instead of `print`.
+* Use `logging` instead of `print`:
+    ```py
+    logger = logging.getLogger(__name__)
+    logger.info("Foobar")
+    ```
+
 
 ## Private names take a leading underscore
 
