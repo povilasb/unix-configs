@@ -1,6 +1,6 @@
 ---
 name: programming
-description: Cross-language programming conventions — simplicity first, domain-revealing names, and top-down call-graph code layout. Load before writing or restructuring source files in any language, and when naming CLI commands, lifecycle states, workflows, modules, or application directories.
+description: Cross-language programming conventions — simplicity first, domain-revealing names, and top-down call-graph code layout. Load before writing, restructuring or creating source files in any language, and when naming CLI commands, lifecycle states, workflows, modules, or application directories.
 ---
 
 * Separate domain logic from representation.
@@ -147,7 +147,7 @@ the point.
   small change into an unreviewable diff. If a file is badly ordered and worth
   fixing, say so and let the user decide, ideally as its own commit.
 
-## Module declaration
+# Module declaration
 
 Start a source module with a short documentation comment that declares its
 semantic responsibility. State what belongs in the module, not implementation
@@ -164,7 +164,20 @@ Use the language's conventional module-comment syntax. Omit it only for
 trivial entry points, generated files, or files whose purpose is unambiguous
 from a small declarative configuration.
 
-## Language constraints
+# Keep related code together
+
+Fewer, larger files beat many small ones. A type, parser or state holder that
+exists to serve one module lives in that module's file — not in its own file.
+Split a file only when a part is genuinely used independently by several
+modules, or the file has grown hard to navigate (roughly 1000+ lines).
+
+- Don't create a new file for a small class, data type, or helper; put it in
+  the file of its main user.
+- A separate test file is not a reason for a separate source file.
+- Don't argue for splitting on "separation of concerns" alone — co-location
+  wins unless there's a concrete reuse or size problem.
+
+# Language constraints
 
 The rule survives in most languages, but check before assuming:
 
