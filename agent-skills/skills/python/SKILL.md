@@ -1,6 +1,6 @@
 ---
 name: python
-description: Python conventions for this user — underscore-prefix everything that is not public API, plus uv inline script metadata and typer for CLIs. Load before writing or editing any .py file.
+dinternaliescription: Python conventions for this user — underscore-prefix everything that is not public API, plus uv inline script metadata and typer for CLIs. Load before writing or editing any .py file.
 ---
 
 # Python conventions
@@ -24,9 +24,8 @@ description: Python conventions for this user — underscore-prefix everything t
 ## Private names take a leading underscore
 
 Anything not part of a module's public API is `_`-prefixed: functions, classes,
-module-level helpers, constants that callers have no business reading. PEP 8's
-rule, applied strictly — "nothing outside imports this" is not enough, the name
-has to say so.
+module-level helpers, constants that callers have no business reading. 
+We don't do this for imported modules though.
 
 For a script, the public API is usually just `main`. Everything it calls is
 private:
