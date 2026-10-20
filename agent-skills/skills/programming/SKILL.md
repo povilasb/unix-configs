@@ -3,8 +3,53 @@ name: programming
 description: Cross-language programming conventions — simplicity first, domain-revealing names, and top-down call-graph code layout. Load before writing or restructuring source files in any language, and when naming CLI commands, lifecycle states, workflows, modules, or application directories.
 ---
 
-* Use visual spacing to group related statements and optimize for code readability.
 * Separate domain logic from representation.
+
+# Required: separate logical phases with blank lines
+
+Inside functions, put one blank line whenever the purpose changes:
+input parsing → authorization → preparation → execution → result.
+These are examples of boundaries, not phases every function must have.
+
+This applies even when a phase is only one statement. A multiline
+expression does not replace the blank line between phases.
+
+Keep closely related statements together. Do not separate every statement,
+and do not add phase comments when spacing alone makes the groups clear.
+Avoid dense one-line functions and expressions when expanding them makes
+the control flow easier to scan.
+
+```ts
+await requireStaff(db, actor);
+
+const input = schema.parse(rawInput);
+const filter = buildFilter(input.search);
+const [result] = await db.select({ total: count() }).from(client).where(filter);
+
+const pages = Math.max(1, Math.ceil(result.total / pageSize));
+const currentPage = Math.min(input.page, pages);
+
+const clients = await db
+  .select()
+  .from(client)
+  .where(filter)
+  .limit(pageSize)
+  .offset((currentPage - 1) * pageSize);
+
+return { clients, page: currentPage, pages };
+```
+
+**Required final check:** before returning a code change, scan every edited
+function. Can its logical phases be identified from whitespace alone?
+If not, add the missing blank lines. Prefer a few more lines over a visually
+dense function.
+
+# Test layout
+
+Separate each test's **Given** (setup), **When** (action), and **Then**
+(assertions) phases with blank lines. Keep related statements within each
+phase together. Use spacing rather than `Given`/`When`/`Then` comments when
+the code already makes the phases clear.
 
 # Prefer the simplest complete solution
 
@@ -101,11 +146,6 @@ the point.
   same spirit. Don't reorder the rest of the file as a drive-by — that turns a
   small change into an unreviewable diff. If a file is badly ordered and worth
   fixing, say so and let the user decide, ideally as its own commit.
-- **Visually group function bodies.** Separate distinct phases such as argument
-  parsing, validation, setup, main work, and reporting with blank lines. Keep
-  tightly related statements together; do not add blank lines after every
-  statement. Avoid dense one-line functions and expressions when expanding them
-  makes the control flow easier to scan.
 
 ## Module declaration
 
