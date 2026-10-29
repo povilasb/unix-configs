@@ -1,0 +1,23 @@
+{
+    "workbench.colorTheme": "Default Light Modern",
+    "claudeCode.preferredLocation": "panel",
+    "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
+    "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
+    "python.analysis.typeCheckingMode": "standard",
+    "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+    "chat.viewSessions.orientation": "stacked",
+    "editor.lineNumbers": "relative",
+    "makefile.configureOnOpen": true,
+    "window.autoDetectColorScheme": true,
+    "[kotlin]": {},
+    "[rust]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    },
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
+    "svelte.enable-ts-plugin": true,
+    "files.trimTrailingWhitespace": true
+}
