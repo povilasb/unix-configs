@@ -1,6 +1,6 @@
 ---
 name: programming
-description: Cross-language programming conventions — simplicity first, domain-revealing names, and top-down call-graph code layout. Load before writing, restructuring or creating source files in any language, and when naming CLI commands, lifecycle states, workflows, modules, or application directories.
+description: Cross-language programming conventions — simplicity first, logical visual spacing, domain-revealing names, and top-down call-graph code layout. Load before writing, restructuring or creating source files in any language, including HTML and component templates, and when naming CLI commands, lifecycle states, workflows, modules, or application directories.
 ---
 
 * Separate domain logic from representation.
@@ -39,10 +39,32 @@ const clients = await db
 return { clients, page: currentPage, pages };
 ```
 
+## HTML and component templates
+
+Apply the same visual-spacing rule to HTML, Svelte templates, JSX, and other
+markup. Put one blank line between logical groups, such as a heading and its
+content, form fields and actions, or a dialog's description, error, and buttons.
+Keep closely related elements together; do not separate every element or add
+wrapper elements just to create groups. Indentation and multiline attributes
+do not replace blank lines between groups.
+
+```html
+<section>
+  <h2>Delete exercise?</h2>
+
+  <p>This action cannot be undone.</p>
+
+  <div class="flex gap-3">
+    <button type="button">Cancel</button>
+    <button type="submit">Delete</button>
+  </div>
+</section>
+```
+
 **Required final check:** before returning a code change, scan every edited
-function. Can its logical phases be identified from whitespace alone?
-If not, add the missing blank lines. Prefer a few more lines over a visually
-dense function.
+function and markup section. Can its logical groups be identified from
+whitespace alone? If not, add the missing blank lines. Prefer a few more lines
+over visually dense code.
 
 # Test layout
 
