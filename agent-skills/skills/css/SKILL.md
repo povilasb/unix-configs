@@ -1,9 +1,17 @@
 ---
 name: css
-description: CSS styling and themes. Use before creating or editing CSS, SCSS, or component style blocks.
+description: CSS styling, Tailwind utilities, and themes. Use before creating or editing styles, including Tailwind classes in HTML or component templates, CSS, SCSS, or component style blocks.
 ---
 
 # CSS structure
+
+## Prefer Tailwind utilities when available
+
+In projects using Tailwind CSS, prefer its utilities for styling in HTML and
+component templates instead of adding equivalent plain CSS rules. Reuse the
+project's components and theme tokens. Keep scoped CSS for rules that utilities
+cannot express clearly; do not introduce Tailwind into projects that do not use
+it or convert unrelated existing styles as part of a small change.
 
 ## Themes
 
@@ -24,4 +32,3 @@ body[data-theme='light'] {
 Use `data-theme` on the document element or `body` for application-wide
 themes. Use a local class only when a component deliberately supports an
 independent theme.
-
